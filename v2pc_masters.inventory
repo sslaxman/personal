@@ -1,0 +1,9 @@
+[masters]
+
+200.8.0.11
+#200.8.0.12
+#200.8.0.13
+
+[masters:vars]
+ansible_user=v2pc
+ansible_ssh_private_key_file=/root/v2pcssh.key
