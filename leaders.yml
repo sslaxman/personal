@@ -1,0 +1,64 @@
+---
+- hosts: masters
+  sudo: true
+  tasks:
+  - name: GUI Leader status
+    command: nslookup master.v2p-ui.service.region-0.v2pc.com
+    register: result
+
+  - name: Print Leader
+    debug:
+      msg: "GUI leader is : {{ result.stdout }}"
+
+  - name: AICM Leader status
+    command: nslookup master.aicm.service.region-0.v2pc.com
+    register: result
+
+  - name: Print Leader
+    debug:
+      msg: "AICM leader is : {{ result.stdout }}"
+
+
+  - name: MFCM Leader status
+    command: nslookup master.mfcm.service.region-0.v2pc.com
+    register: result
+
+  - name: Print Leader
+    debug:
+      msg: "MFCM leader is : {{ result.stdout }}"
+
+
+  - name: SM Leader status
+    command: nslookup master.service-mgr.service.region-0.v2pc.com
+    register: result
+
+  - name: Print Leader
+    debug:
+      msg: "SM leader is : {{ result.stdout }}"
+
+
+  - name: DocServer Leader status
+    command: nslookup master.mgmt-docserver.service.region-0.v2pc.com
+    register: result
+
+  - name: Print Leader
+    debug:
+      msg: "DocServer leader is : {{ result.stdout }}"
+
+
+    #shell: nslookup master.aicm.service.region-0.v2pc.com
+    #shell: nslookup master.mfcm.service.region-0.v2pc.com
+    #shell: nslookup master.mgmt-docserver.service.region-0.v2pc.com
+    #shell: nslookup master.service-mgr.service.region-0.v2pc.com
+    #shell: nslookup master.v2pc-dns.service.region-0.v2pc.com
+    #shell: systemctl status mongod.service 
+    #shell: systemctl status v2p-ui.service 
+    #shell: systemctl status consul.service 
+
+#  - name: Check python version
+#    command: python --version
+#    register: pythonVersion
+#
+#  - name: Print version
+#    debug:
+#      msg: "Python Version: {{ pythonVersion.stdout }}"
