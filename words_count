@@ -1,0 +1,25 @@
+import re
+sentences = "     My name is Lakshman    . I am from southern part of India. where does Lakshman live?"
+
+def sentenceSplitter(sentences):
+    sents_items = re.compile('[.?!]')
+    splitted_sentences = sents_items.split(sentences)
+    return splitted_sentences
+
+def words_count(sentence):
+	word = re.split(" ", sentence)
+	return len(word)
+
+if __name__ == '__main__':
+    split_sentences=sentenceSplitter(sentences)
+    print split_sentences
+    max_words = 0
+    longest = ''
+    for sentence in split_sentences:
+	num_of_words=words_count(sentence.lstrip().rstrip())
+	print (sentence.lstrip().rstrip())
+	if num_of_words > max_words:
+		max_words = num_of_words
+		longest = sentence
+    print "longest sentence in this paragraph is : " + (longest)
+    print "number of words in the longest sentence is : " + str(max_words)
