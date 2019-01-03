@@ -1,0 +1,25 @@
+---
+- hosts: mce
+  sudo: true
+  tasks:
+  - name: Backup file
+    shell: cp /opt/cisco/mos/node/lib/node_modules/RecordingController/CIFMpdGenerator/CIFMpdGenerator.js CIFM
+pdGenerator.js
+  - copy:
+      src: /root/v2pc_ansible/CIFMpdGenerator.js
+      dest: /opt/cisco/mos/node/lib/node_modules/RecordingController/CIFMpdGenerator/CIFMpdGenerator.js
+[root@localhost ~]# cp rpm_patch_install.yml
+cp: missing destination file operand after ‘rpm_patch_install.yml’
+Try 'cp --help' for more information.
+[root@localhost ~]# cp mce_patch_install.yml rpm_patch_install.yml
+[root@localhost ~]# more rpm_patch_install.yml 
+---
+- hosts: mce
+  sudo: true
+  tasks:
+  - name: Backup file
+    shell: cp /opt/cisco/mos/node/lib/node_modules/RecordingController/CIFMpdGenerator/CIFMpdGenerator.js CIFM
+pdGenerator.js
+  - copy:
+      src: /root/v2pc_ansible/CIFMpdGenerator.js
+      dest: /opt/cisco/mos/node/lib/node_modules/RecordingController/CIFMpdGenerator/CIFMpdGenerator.js
