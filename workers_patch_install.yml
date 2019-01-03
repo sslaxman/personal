@@ -23,3 +23,8 @@ pdGenerator.js
   - copy:
       src: /root/v2pc_ansible/CIFMpdGenerator.js
       dest: /opt/cisco/mos/node/lib/node_modules/RecordingController/CIFMpdGenerator/CIFMpdGenerator.js
+
+
+usage:
+export ANSIBLE_HOST_KEY_CHECKING=False
+ansible-playbook workers_patch_install.yml –i workers_list.inventory –v
